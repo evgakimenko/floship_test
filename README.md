@@ -8,7 +8,7 @@
 * Make sure these applications can only communicate via Rest API and don't share a same database (two separate databases).
 
 
-### The project was realized with Django fraemwork and Django Rest Fraemwork.
+### This project was realized with Django fraemwork and Django Rest Fraemwork.
 
 # Instruction:
 
@@ -20,14 +20,14 @@
 
 ### Create super user for both services in each service console with commands:
 
-for store: python manage.py createsuperuser --settings=floship_test.settings.settings_store
+* for store: python manage.py createsuperuser --settings=floship_test.settings.settings_store
 
-for warehouse: python manage.py createsuperuser --settings=floship_test.settings.settings_warehouse
+* for warehouse: python manage.py createsuperuser --settings=floship_test.settings.settings_warehouse
 
 
 ### With the existing .env
 
-store admin site by the link http://localhost:8001/store/admin/
+* store admin site by the link http://localhost:8001/store/admin/
 
-warehouse admin site by the link http://localhost:8002/warehouse/admin/
+* warehouse admin site by the link http://localhost:8002/warehouse/admin/
 
