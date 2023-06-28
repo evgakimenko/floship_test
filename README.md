@@ -1,6 +1,6 @@
 # floship_test
 
-## This is a technical requirement for this project:
+## This is a technical requirements for this project:
 * Create two applications. (Store and Warehouse)
 * (Store) One application should provide Orders (should be able to create order from admin page)
 * (Warehouse) Another application should be able to receive these orders via the API and push back the information to the (Store).
