@@ -21,6 +21,7 @@ If you have a Windows, then run the command instead of the previous command: doc
 ### Create super user for both services in each service console with commands:
 
 for store: python manage.py createsuperuser --settings=floship_test.settings.settings_store
+
 for warehouse: python manage.py createsuperuser --settings=floship_test.settings.settings_warehouse
 
 
