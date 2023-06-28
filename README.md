@@ -27,5 +27,6 @@ for warehouse: python manage.py createsuperuser --settings=floship_test.settings
 ### With the existing .env
 
 store admin site by the link http://localhost:8001/store/admin/
+
 warehouse admin site by the link http://localhost:8002/warehouse/admin/
 
