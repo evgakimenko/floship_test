@@ -1,0 +1,62 @@
+services:
+  dbstore:
+    image: postgres:15.1
+    restart: on-failure
+    environment:
+      POSTGRES_DB: "store"
+      POSTGRES_USER: ${STORE_DB_USER}
+      POSTGRES_PASSWORD: ${STORE_DB_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: trust
+      CLIENT_ENCODING: UTF8
+    ports:
+      - 5432:5432
+    volumes:
+      - dbstore:/var/lib/postgresql/data
+
+  dbwarehouse:
+    image: postgres:15.1
+    restart: on-failure
+    environment:
+      POSTGRES_DB: "warehouse"
+      POSTGRES_USER: ${WAREHOUSE_DB_USER}
+      POSTGRES_PASSWORD: ${WAREHOUSE_DB_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: trust
+      CLIENT_ENCODING: UTF8
+    ports:
+      - 5433:5432
+    volumes:
+      - dbwarehouse:/var/lib/postgresql/data
+
+  store:
+    build:
+      dockerfile: ./apps/store/Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "8001:8001"
+    environment:
+      STORE_DB_USER: ${STORE_DB_USER}
+      STORE_DB_PASSWORD: ${STORE_DB_PASSWORD}
+      STORE_DB_PORT: ${STORE_DB_PORT}
+      STORE_DB_HOST: ${STORE_DB_HOST}
+    depends_on:
+      - dbstore
+
+  warehouse:
+    build:
+      dockerfile: ./apps/warehouse/Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "8002:8002"
+    environment:
+      WAREHOUSE_DB_USER: ${WAREHOUSE_DB_USER}
+      WAREHOUSE_DB_PASSWORD: ${WAREHOUSE_DB_PASSWORD}
+      WAREHOUSE_DB_PORT: ${WAREHOUSE_DB_PORT}
+      WAREHOUSE_DB_HOST: ${WAREHOUSE_DB_HOST}
+    depends_on:
+      - dbwarehouse
+
+volumes:
+    dbwarehouse:
+    dbstore:
