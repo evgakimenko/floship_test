@@ -39,6 +39,9 @@ services:
       STORE_DB_PASSWORD: ${STORE_DB_PASSWORD}
       STORE_DB_PORT: ${STORE_DB_PORT}
       STORE_DB_HOST: ${STORE_DB_HOST}
+      STORE_TOKEN: ${STORE_TOKEN}
+      WAREHOUSE_TOKEN: ${WAREHOUSE_TOKEN}
+      WAREHOUSE_URL: ${WAREHOUSE_URL}
     depends_on:
       - dbstore
 
@@ -54,9 +57,12 @@ services:
       WAREHOUSE_DB_PASSWORD: ${WAREHOUSE_DB_PASSWORD}
       WAREHOUSE_DB_PORT: ${WAREHOUSE_DB_PORT}
       WAREHOUSE_DB_HOST: ${WAREHOUSE_DB_HOST}
+      WAREHOUSE_TOKEN: ${WAREHOUSE_TOKEN}
+      STORE_TOKEN: ${STORE_TOKEN}
+      STORE_URL: ${STORE_URL}
     depends_on:
       - dbwarehouse
 
 volumes:
-    dbwarehouse:
-    dbstore:
+  dbwarehouse:
+  dbstore:

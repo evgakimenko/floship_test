@@ -2,14 +2,12 @@ import environ
 
 from .common import *
 
-
 env = environ.Env()
 environ.Env.read_env()
 
-
-INSTALLED_APPS += (
+INSTALLED_APPS += [
     'apps.store',
-)
+]
 
 DATABASES = {
     'default': {
@@ -22,3 +20,5 @@ DATABASES = {
         'CONN_HEALTH_CHECKS': True,
     }
 }
+
+SESSION_COOKIE_NAME = 'store_session_id'
