@@ -12,11 +12,11 @@
 
 # Instruction:
 
-Before the first run, you need to copy .env.dist to .env
-If necessary, change the configuration of ports, logins, passwords, etc.
-Download, install and run Docker
-Run "make dev" command in console
-If you have a Windows, then run the command instead of the previous command: docker compose up -d --build
+* Before the first run, you need to copy .env.dist to .env
+* If necessary, change the configuration of ports, logins, passwords, etc.
+* Download, install and run Docker
+* Run "make dev" command in console
+* If you have a Windows, then run the command instead of the previous command: docker compose up -d --build
 
 ### Create super user for both services in each service console with commands:
 
