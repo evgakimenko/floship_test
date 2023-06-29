@@ -24,7 +24,7 @@ class StoreOrder(models.Model):
 
 
 @receiver(post_save, sender=StoreOrder)
-def send_email_otp(instance, created, **kwargs):
+def send_order_create(instance, created, **kwargs):
     if created:
         data = {
             'id': str(instance.id),
