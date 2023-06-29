@@ -22,14 +22,14 @@ class StoreOrder(models.Model):
     class Meta:
         app_label = 'store'
 
-
-@receiver(post_save, sender=StoreOrder)
-def send_order_create(instance, created, **kwargs):
-    if created:
-        data = {
-            'id': str(instance.id),
-            'order_name': instance.order_name,
-            'order_status': instance.order_status,
-        }
-        post_data = json.dumps(data)
-        SendRequest().post_order(post_data)
+    # Uncomment this code if only create order is required in warehouse from store
+# @receiver(post_save, sender=StoreOrder)
+# def send_order_create(instance, created, **kwargs):
+#     if created:
+#         data = {
+#             'id': str(instance.id),
+#             'order_name': instance.order_name,
+#             'order_status': instance.order_status,
+#         }
+#         post_data = json.dumps(data)
+#         SendRequest().post_order(post_data)

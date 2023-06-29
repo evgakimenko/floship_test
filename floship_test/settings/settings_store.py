@@ -3,7 +3,6 @@ import environ
 from .common import *
 
 env = environ.Env()
-environ.Env.read_env()
 
 INSTALLED_APPS += [
     'apps.store',

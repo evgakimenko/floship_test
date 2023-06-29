@@ -26,4 +26,5 @@ urlpatterns = [
     path('store/admin/', store_admin_site.urls),
     path('warehouse/api/create/order/', WarehouseOrderView.as_view(), name='warehouse_order_create_api_view', ),
     path('store/api/update/order/', StoreOrderView.as_view(), name='store_order_update_api_view', ),
+    path('warehouse/api/update/order/', WarehouseOrderView.as_view(), name='warehouse_order_update_api_view', ),
 ]
